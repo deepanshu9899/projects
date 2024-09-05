@@ -1,11 +1,25 @@
-- name: Setup .NET Core SDK
-  uses: actions/setup-dotnet@v4.0.1
-  with:
-    dotnet-version: 6.0
-    dotnet-quality: null
-    global-json-file: null
-    source-url: null
-    owner: null
-    config-file: null
-    cache: null
-    cache-dependency-path: null
+
+name: Dot net installation
+
+on:
+  workflow_dispatch:  
+
+jobs:
+  build:
+    runs-on: mac
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v4.0.1
+      with:
+    
+        dotnet-version: 6.0
+   
+    
+        
+    - name: Dotnet version 
+      run: |
+        dotnet --version
